@@ -71,7 +71,7 @@ _Решение_:
 
 #pagebreak()
 
-#let items = csv("items.csv")
+#let items = csv("../3/data/items.csv")
 #figure(
   table(
     columns: 4,
@@ -81,16 +81,16 @@ _Решение_:
 ) <items>
 
 
-#let people = csv("people.csv")
+#let people = csv("../3/data/people.csv")
 #figure(
   table(
-    columns: 4,
+    columns: 3,
     ..people.flatten()
   ),
   caption: [Сущность `Клиент`]
 ) <people>
 
-#let last = csv("last.csv")
+#let last = csv("../3/data/dataset.csv")
 #figure(
   table(
     columns: 5,
