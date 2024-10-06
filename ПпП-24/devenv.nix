@@ -14,6 +14,8 @@
       numpy
       # tkinter
       tk
+      taichi
+      scipy
     '';
   };
 }
