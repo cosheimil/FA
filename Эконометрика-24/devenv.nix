@@ -20,6 +20,7 @@
       pandas
       scipy
       seaborn
+      statsmodels
     '';
   };
 }
