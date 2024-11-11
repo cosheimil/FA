@@ -349,3 +349,88 @@ select a1 from R
     [C],
   )
 ]
+
+7. Соединение
+
+#align(center)[
+  #table(
+    columns: 2,
+    align: center,
+
+    table.header(
+      table.cell(colspan: 2)[Отношение #text(red)[R]]
+    ),
+    [#text(red)[*R.a1*]], [#text(red)[*R.a2*]],
+    [X], [1],
+    [X], [2],
+    [Y], [1],
+    [Y], [3],
+    [Y], [4],
+  )
+]
+
+#align(center)[
+  #table(
+    columns: 2,
+    align: center,
+
+    table.header(
+      table.cell(colspan: 2)[Отношение #text(red)[S]]
+    ),
+    [#text(red)[*S.b1*]], [#text(red)[*S.b2*]],
+    [1], [p],
+    [2], [g],
+    [3], [p],
+    [5], [h],
+  )
+]
+
+Left-join по ключам $"a1" arrow.l.r.double "a2"$:
+
+#align(center)[
+  #table(
+    columns: 3,
+    align: center,
+
+    table.header(
+      table.cell(colspan: 3)[Отношение #text(red)[RS]]
+    ),
+    [#text(red)[*R.a1*]], [#text(red)[*R.a2*]],[#text(red)[*S.b2*]],
+    [X], [1], [p],
+    [X], [2], [g],
+    [Y], [1], [p],
+    [Y], [3], [p],
+    [Y], [4], [ ],
+  )
+]
+
+
+
+Inner-join по ключам $"a1" arrow.l.r.double "a2"$:
+
+#align(center)[
+  #table(
+    columns: 4,
+    align: center,
+
+    table.header(
+      table.cell(colspan: 4)[Отношение #text(red)[RS]]
+    ),
+    [#text(red)[*R.a1*]], [#text(red)[*R.a2*]], [#text(red)[*S.b1*]], [#text(red)[*S.b2*]],
+    [X], [1], [1], [p],
+    [X], [2], [2], [g],
+    [Y], [3], [3], [p],
+    [Y], [3], [3], [p]
+  )
+]
+
+= Задание 2. Вариант 3
+
+Реляционное исчесление кортежей:
+
+```sql
+RANGE OF R IS Студенты
+RANGE OF L IS Курсы
+{R.Имя | L.Код = 'CS101'}
+```
+

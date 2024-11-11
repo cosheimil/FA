@@ -1,7 +1,12 @@
 { pkgs, lib, config, inputs, ... }:
 
 {
-  packages = with pkgs; [ jupyter-all ];
+  packages = (with pkgs; [ jupyter-all ]) ++(
+    with pkgs.python311Packages; [
+      pandas
+      faker
+    ]
+  );
 
   languages.python = {
     enable = true;
