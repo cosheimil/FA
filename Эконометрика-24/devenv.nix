@@ -22,5 +22,7 @@
       seaborn
       statsmodels
     '';
+    uv.enable = true;
+    uv.sync.enable = true;
   };
 }
