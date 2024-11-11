@@ -1,10 +1,7 @@
 { pkgs, lib, config, inputs, ... }:
 
 {
-  packages = with pkgs; [
-    jupyter-all
-    python311Packages.tkinter
-  ];
+  packages = with pkgs; [ jupyter-all python311Packages.tkinter ];
 
   languages.python = {
     enable = true;
